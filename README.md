@@ -9,7 +9,6 @@ The **Wildfire Alert System** is a comprehensive, near real-time monitoring plat
 - Facilitate **rapid response**
 - Contribute to **long-term disaster risk reduction strategies**
 
----
 
 ###  Academic Context
 
@@ -34,7 +33,6 @@ The architecture of our wildfire alert system is designed for efficient data flo
 
 The system operates in distinct, orchestrated phases designed to ensure efficiency, scalability, and near real-time performance.
 
----
 
 ###  Extract Phase
 
@@ -46,7 +44,6 @@ Data is extracted from two primary external sources:
 2. **NASA-FIRMS**  
    Supplies near real-time satellite-based fire and thermal anomaly (hotspot) data, which is essential for identifying active wildfire locations.
 
----
 
 ###  Transform Phase
 
@@ -58,7 +55,6 @@ The raw data from both sources undergoes several transformation steps:
 >  Intermediate output is stored as **CSV** for manual inspection and testing.  
 >  Final data is stored in **Parquet** format, optimized for storage efficiency and analytical performance.
 
----
 
 ###  Load & Visualization Phase (Orchestrated by Prefect)
 
@@ -81,7 +77,6 @@ Integrated within the Streamlit application:
 - **GeoPandas** enables spatial joins and geographic computations
 - **Folium** renders **interactive maps** and heatmaps to display hotspot density and fire severity
 
----
 
 This design ensures a **robust**, **scalable**, and **near real-time** wildfire monitoring system that fulfills the objectives of both academic coursework and national disaster response readiness.
 
@@ -89,13 +84,11 @@ This design ensures a **robust**, **scalable**, and **near real-time** wildfire 
 
 This section carefully addresses each grading criterion outlined for the DSI321 and DSI324 courses, clearly demonstrating how the project meets the requirements for a **perfect score**.
 
----
 
 ## Part 1: Technical Work (90 Points)
 
 This section evaluates the quality of technical implementation, data processing strategy, repository management, and overall data quality.
 
----
 
 ### Repository Setup (10 Points)
 
@@ -106,7 +99,6 @@ This section evaluates the quality of technical implementation, data processing 
   - **`dsi321_2025`**
 - This setup ensures transparency, accessibility, and traceability of all project components and activities.
 
----
 
 ###  Commit Frequency (10 Points)
 
@@ -119,7 +111,6 @@ This section evaluates the quality of technical implementation, data processing 
 - Proper development discipline
 - Effective use of Git for tracking iterations and collaboration
 
----
 
 ### Quality of README (10 Points)
 - The **README.md** is structured to provide:
@@ -140,7 +131,6 @@ This section evaluates the quality of technical implementation, data processing 
 
 This section assesses the depth, accuracy, and structure of the data used in the wildfire alert system. The project successfully integrates real-time and geospatial data, ensuring quality through schema enforcement, completeness checks, and governance controls.
 
----
 
 ####  Data Sources and Structure
 
@@ -162,7 +152,6 @@ The system organizes the ingested and transformed data into three primary folder
    - Contains geographic boundary shapefiles used for spatial analysis and visualization.
    - Downloadable from [this source](https://data.humdata.org/dataset/d24bdc45-eb4c-4e3d-8b16-44db02667c27/resource/d0c722ff-6939-4423-ac0d-6501830b1759/download/tha_adm_rtsd_itos_20210121_shp.zip)
 
----
 
 #### Schema Consistency (10 Points)
 
@@ -174,7 +163,6 @@ The system organizes the ingested and transformed data into three primary folder
 - The system leverages **LakeFS** to enforce version-controlled schema evolution and auditing.
 - Data formats (Parquet, GeoJSON) are designed for analytical compatibility and consistency.
 
----
   
 #### Record Count ≥ 1,000 (10 Points)
 
@@ -182,7 +170,6 @@ The system organizes the ingested and transformed data into three primary folder
 - LakeFS manages **large-scale data ingestion**, ensuring historical records are retained.
 - Given the data frequency and active periods, the project consistently exceeds **1,000+ records**, especially when analyzing even a few days of data.
 
----
   
 #### 24-Hour Time Coverage (10 Points)
 
@@ -190,7 +177,6 @@ The system organizes the ingested and transformed data into three primary folder
 - Users can **flexibly query any time window**, including full-day periods, from the Streamlit frontend.
 - Scheduled runs through **Prefect ensure no downtime**, maintaining uninterrupted time coverage.
 
----
   
 #### Data Completeness ≥ 90% (10 Points)
 
@@ -202,7 +188,6 @@ The system organizes the ingested and transformed data into three primary folder
 - These checks ensure that more than **90% of all records are complete** and usable.
 - Completeness is also enforced at the schema level during Parquet write operations.
 
----
   
 #### No 'object' Data Types (5 Points)
 
@@ -216,7 +201,6 @@ The system organizes the ingested and transformed data into three primary folder
   - `string` (e.g., location name)
 - This ensures compatibility with ML pipelines and analytical operations.
 
----
   
 #### No Duplicate Data (5 Points)
 
